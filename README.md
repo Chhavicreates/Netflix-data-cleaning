@@ -1,84 +1,88 @@
-# Netflix-data-cleaning
+# 🎬 Netflix Data Engineering Pipeline (SQL + Python)
 
-netflix-data-engineering-project/
-│
-├── data/
-│   └── (README explaining data is downloaded via Kaggle API)
-│
-├── notebooks_or_scripts/
-│   └── data_extraction.py       # Python script using Kaggle API
-│   └── README.md                # Explain what each script does
-│
-├── sql/
-│   └── create_tables.sql        # SQL code for raw, fact, and dimension tables
-│   └── transform_data.sql       # Data cleaning and transformation queries
-│   └── analysis_queries.sql     # Final queries to answer business questions
-│
-├── requirements.txt             # List of Python libraries (e.g., kaggle)
-├── .gitignore                   # Exclude API keys or credentials
-├── README.md                    # Main project explanation
-└── kaggle.json                  # (Add to .gitignore; don’t upload this!)
-📝 README.md Content Template
-Here’s what your README.md should contain:
+This project demonstrates an *end-to-end data engineering pipeline* using *Python* and *SQL Server*. It replicates a real-world ELT (Extract, Load, Transform) workflow — extracting data from Kaggle, loading it into a database, transforming it into a structured schema, and performing analytics to answer business questions.
 
-🎬 Netflix Data Engineering Pipeline (SQL + Python)
-📌 Overview
-This project demonstrates an end-to-end data engineering pipeline using Python and SQL Server. It walks through the process of data extraction from Kaggle, loading it into SQL Server, transforming the data using SQL, and finally performing business analytics queries.
+---
 
-🧰 Tools & Technologies Used
-Python (for automation and API access)
+## 🧰 Tools & Technologies Used
 
-Kaggle API (for downloading the dataset)
+- *Python*: For scripting and data extraction via Kaggle API
+- *Kaggle API*: To automate the download of the dataset
+- *SQL Server*: For data storage, transformation, and analytics
+- *Libraries*:
+  - kaggle (for dataset download)
+  - pandas (optional, if used for preprocessing)
 
-SQL Server (for storing, transforming, and analyzing data)
+---
 
-Libraries: kaggle, pandas (if used)
+## 📁 Project Structure
 
-📂 Project Structure
+netflix-data-engineering-project/ │ ├── data/ # Placeholder for dataset or samples │ ├── notebooks_or_scripts/ │ └── data_extraction.py # Script to fetch data from Kaggle │ ├── sql/ │ ├── create_tables.sql # SQL commands to create raw and modeled tables │ ├── transform_data.sql # SQL queries to clean and structure data │ └── analysis_queries.sql # SQL queries for business analysis │ ├── requirements.txt # Python libraries needed ├── .gitignore # To exclude kaggle.json and other sensitive files └── README.md # Project documentation (this file)
 
-Folder / File	Purpose
-data/	Placeholder for dataset info or samples
-notebooks_or_scripts/	Python scripts for data extraction and automation
-sql/	SQL files for table creation, transformation, queries
-requirements.txt	Python dependencies
-📥 Dataset Source
-Source: Netflix Titles on Kaggle
+yaml
+Copy
+Edit
 
-Access via Kaggle API (requires kaggle.json authentication)
+---
 
-🔧 How to Run
-Clone the repository
+## 📥 Dataset Information
 
-Install dependencies:
+- *Dataset Name*: Netflix Titles
+- *Source*: [Kaggle - Netflix Shows Dataset](https://www.kaggle.com/datasets/shivamb/netflix-shows)
+- *Access Method*: Kaggle API
 
-nginx
+---
+
+## ⚙ How to Run This Project
+
+1. *Clone the Repository*
+   ```bash
+   git clone https://github.com/your-username/netflix-data-engineering-project.git
+   cd netflix-data-engineering-project
+Install Python Dependencies
+
+bash
 Copy
 Edit
 pip install -r requirements.txt
-Add your kaggle.json to the root (⚠ Do not commit it!)
+Add your Kaggle API Token
 
-Run the data_extraction.py to download data
+Place your kaggle.json file in the root directory
 
-Use the SQL scripts in sql/ to:
+Add it to .gitignore to avoid committing sensitive data
 
-Create and populate raw table
+Run the Extraction Script
 
-Transform data into dimensional model
+bash
+Copy
+Edit
+python notebooks_or_scripts/data_extraction.py
+Set up SQL Server
 
-Run analysis queries
+Execute sql/create_tables.sql to create raw and structured tables
+
+Run sql/transform_data.sql to clean and model the data
+
+Use sql/analysis_queries.sql to generate business insights
+
+🧠 Learning Objectives
+✅ Understand how to build a real-world ELT pipeline
+✅ Practice integrating Python scripts with APIs and SQL
+✅ Learn to structure raw data into fact and dimension tables
+✅ Gain insights using analytical SQL queries
 
 📈 Final Output
-One fact table
+✅ One raw data table
 
-Four dimension tables
+✅ One fact table
 
-Answers to 5+ analytical questions
+✅ Four dimension tables
 
-🧠 Learning Goals
-Practice with ELT pipeline
+✅ SQL queries that answer key business questions like:
 
-Hands-on with SQL data modeling
+What are the most common genres?
 
-Integration of APIs and databases
+Which country produces the most Netflix content?
 
-Real-world data engineering simulation
+How has content production changed over time?
+
